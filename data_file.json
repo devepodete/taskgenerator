@@ -1,0 +1,17 @@
+{
+    "Body": [
+        ["Result of", "A", "and", "B"]
+    ],
+    "A": [
+        "$math.log(rnd1to10)"
+    ],
+    "B": [
+        "$MyModule.foo()"
+    ],
+    "rnd1to10": [
+        "$random.randint(1, 10)"
+    ],
+    "rnd20to30": [
+        "$random.randint(20, 30)"
+    ]
+}
