@@ -1,17 +1,12 @@
 {
+    "Title": "Простые числа",
     "Body": [
-        ["Result of", "A", "and", "B"]
+        [
+        "Напишите программу, выводящую простые числа от", "left",
+        "до", "right", "включительно с шагом в", "step", "простых числа"
+        ]
     ],
-    "A": [
-        "$math.log(rnd1to10)"
-    ],
-    "B": [
-        "$MyModule.foo()"
-    ],
-    "rnd1to10": [
-        "$random.randint(1, 10)"
-    ],
-    "rnd20to30": [
-        "$random.randint(20, 30)"
-    ]
+    "left": ["$random.randint(2, 10)"],
+    "right": ["$random.randint(left+1, 100)"],
+    "step": ["1", "2", "3", "4"]
 }

@@ -7,7 +7,7 @@ def main():
     tg.import_module('math')
     tg.import_module('MyModule')
     json_path = Path('data_file.json')
-    print(tg.json_rules_to_str(json_path))
+    print(tg.json_rules_to_str(json_path, root_state='Body'))
 
 
 if __name__ == '__main__':
