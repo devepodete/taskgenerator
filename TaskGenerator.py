@@ -102,14 +102,12 @@ class TaskGenerator:
         from importlib import import_module
         globals()[module_name] = import_module(module_name)
 
-    def json_rules_to_str(self, json_path: Path, root_state: str) -> str:
+    def json_rules_to_str(self, json_path: Path, root_state: str) -> (str, dict):
         with open(json_path, 'r') as f:
             rules = json.load(f)
 
         result = [root_state]
         result = expansion(result, rules)
         result = final_expand(result, rules)
-        return ' '.join(result)
-
-
-
+        variables = {key: value for key, value in zip(rules[root_state][0], result) if key in rules}
+        return ' '.join(result), variables
